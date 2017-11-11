@@ -1,0 +1,87 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Name:        src/wor/worfiles/ind.css
+ * Project:     The Family Pack WOR: Web Output for TFP Rec Library.
+ * Purpose:     The css used by all Individual html pages.
+ * Author:      Nick Matthews
+ * Website:     http://thefamilypack.org
+ * Created:     1st November 2012
+ * Copyright:   Copyright (c) 2012 - 2016, Nick Matthews.
+ * Licence:     GNU GPLv3
+ *
+ *  The Family Pack is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The Family Pack is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with The Family Pack.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+*/
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table.core {
+    width: 96%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td.core {
+    background-color: #f4ebed;
+    border: 1px solid #777;
+    border-width: 1px 2px;
+    padding: 0.1em 0.4em;
+    text-align: left;
+    vertical-align: top;
+}
+
+td.head {
+    background-color: #e7d8dc;
+}
+
+td.male {
+    background-color: #d0fdff;
+    font: bold 1.2em "Times New Roman", serif;
+}
+
+td.fem {
+    background-color: #ffcccc;
+    font: bold 1.2em "Times New Roman", serif;
+}
+
+td.neut {
+    background-color: #eeeeee;
+    font: bold 1.2em "Times New Roman", serif;
+}
+
+td.both {
+    text-align: center;
+}
+
+td.core2 {
+    padding: 0.3em;
+}
+
+table.core2 {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/* End of ind.css file */

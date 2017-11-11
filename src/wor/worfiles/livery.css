@@ -1,0 +1,161 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Name:        src/wor/worfiles/livery.css
+ * Project:     The Family Pack WOR: Web Output for TFP Rec Library.
+ * Purpose:     The css used to create default livery for webpages.
+ * Author:      Nick Matthews
+ * Website:     http://thefamilypack.org
+ * Created:     4th November 2015
+ * Copyright:   Copyright (c) 2015, Nick Matthews.
+ * Licence:     GNU GPLv3
+ *
+ *  The Family Pack is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The Family Pack is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with The Family Pack.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+*/
+
+/* ========[ Default Livery ]======== */
+
+body {
+    color: #000000;
+    background-color: #e7d8dc;
+    background-image: url("bg.png");
+}
+
+body.research {
+    color: #000000;
+    background-color: #ffddc8;
+}
+
+h1 {
+    font: bold 2em "Times New Roman", serif;
+    text-align: center;
+    color: #000000;
+    background-color: #f4ebed;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 0.5em;
+    border: 1px solid #804000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #aaa;
+}
+
+/* ========== Horizontal Menu Bar ==========
+    <!--
+     Centered on top of horizontal line
+     (id="botmenu for below horizontal menu)
+    -->
+    <div id="topmenu">
+     <span class="hmenu"
+      ><a href="../index.htm">Home</a
+      ><a href="../wc01/wc01_001.htm">Matthews</a
+      ><a href="../ind/n_index.htm">Names</a
+      ><a href="../ind/g_index.htm">Galleries</a
+      ><a href="../ind/c_index.htm">Charts</a
+      ><a href="../ind/r_index.htm">Sources</a
+      ><a href="../x/index.htm">Research</a
+      >
+     </span>
+    </div>
+
+    <!--
+     Horizontal menu on left.
+     If immediately after or before a "topmenu" or "botmenu",
+     it will be touching the horizontal line.
+    -->
+    <span class="hmenu"
+     ><a class="orig" href="../or/mil/m4/10-d3-p1.jpg">Original</a
+     ><a class="orig" href="../or/mil/m4/1-d3-p3.jpg">Duplicate</a
+     >
+    </span>
+*/
+
+span.hmenu
+{
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: bold 11px Verdana, Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+
+@media print {       /* Remove menu from printouts */
+    span.hmenu { display: none; }
+    h1 { padding: 0; }
+}
+
+
+span.hmenu a
+{
+    text-decoration: none;
+    padding: 0.2em 1em;
+    color: #804000;
+    background-color: #f4ebed;
+    border: 1px solid #804000;
+}
+
+span.hmenu a:hover
+{
+    color: #804000;
+    background-color: #ffcc00;
+}
+
+span.hmenu a.dummy
+{
+    color: inherit;
+    background-color: #e7d8dc;
+    border: 0;
+    cursor: default;
+}
+
+span.hmenu a.dummy:hover
+{
+    color: inherit;
+    background-color: #e7d8dc;
+}
+
+#topmenu
+{
+    border-bottom: 4px solid #804000;
+    text-align: center;
+    margin: 2px 0;
+}
+
+#botmenu
+{
+    border-top: 4px solid #804000;
+    text-align: center;
+    margin: 2px 0;
+}
+
+/* ========[ Footnote Pieces ]======== */
+
+#page-ref { font: bold 0.8em Verdana, Arial, Helvetica, sans-serif; }
+
+#create-date { font: italic 1em "Times New Roman", serif; }
+
+#created-by {
+    font: normal 0.8em "Times New Roman", serif;
+    text-align: right;
+    padding: 0.5em;
+    float: right;
+}
+
+#created-by em {
+    font-size: 1.2em;
+    font-style: normal;
+}
+
+/* ========[ End of File ]======== */

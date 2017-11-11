@@ -1,0 +1,66 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Name:        src/wor/worFiles.f2c
+ * Project:     wor: Web Output for The Family Pack Rec Library.
+ * Purpose:     Template for auxiliary file text.
+ * Author:      Nick Matthews
+ * Website:     http://thefamilypack.org
+ * Created:     4th February 2015
+ * Copyright:   Copyright (c) 2015, Nick Matthews.
+ * Licence:     GNU GPLv3
+ *
+ *  The Family Pack is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The Family Pack is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with The Family Pack.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*/
+
+#include "wx/wxprec.h"
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+#include "worFiles.h"
+
+// System files
+const char* worFile_livery_css = @(lrc.c)"livery.css";
+const char* worFile_fam_css = @(lrc.c)"fam.css";
+const char* worFile_ind_css = @(lrc.c)"ind.css";
+const char* worFile_xmenu_css = @(lrc.c)"xmenu.css";
+
+// Image files
+const unsigned char wor_bg_png[] = @{bg.png};
+size_t wor_sizeof_bg_png = sizeof(wor_bg_png);
+
+const unsigned char wor_club_png[] = @{club.png};
+size_t wor_sizeof_club_png = sizeof(wor_club_png);
+
+const unsigned char wor_diamond_png[] = @{diamond.png};
+size_t wor_sizeof_diamond_png = sizeof(wor_diamond_png);
+
+const unsigned char wor_heart_png[] = @{heart.png};
+size_t wor_sizeof_heart_png = sizeof(wor_heart_png);
+
+const unsigned char wor_spade_png[] = @{spade.png};
+size_t wor_sizeof_spade_png = sizeof(wor_spade_png);
+
+const unsigned char wor_family_png[] = @{family.png};
+size_t wor_sizeof_family_png = sizeof(wor_family_png);
+
+// End of worFiles.f2c Source
+
+

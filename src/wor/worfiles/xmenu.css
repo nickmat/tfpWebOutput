@@ -1,0 +1,137 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Name:        src/wor/worfiles/xmenu.css
+ * Project:     The Family Pack WOR: Web Output for TFP Rec Library.
+ * Purpose:     The css used by hover activated context menus.
+ * Author:      Nick Matthews
+ * Website:     http://thefamilypack.org
+ * Created:     1st November 2012
+ * Copyright:   Copyright (c) 2012 - 2015, Nick Matthews.
+ * Licence:     GNU GPLv3
+ *
+ *  The Family Pack is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The Family Pack is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with The Family Pack.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+  Pop-up menu written as follows:-
+
+    <div class='xmenu'>
+     Visible text or image
+     <div class='ops'>
+      <div class='x2item x2title'>Optional Title</div>
+      <a href='...'>Option 1</a>
+      <a href='javascript:void(0)' class='dummy'>Option 2 (grayed out)</a>
+      <a href='...'>Option 3</a>
+     </div>
+    </div>
+
+  Or a dual layer menu
+
+    <div class='x2menu'>
+     Visible text or image
+     <div class='x2ops'>
+      <div class='x2item x2title'>
+       <div class='xmenu'>
+          ...
+       </div>
+       <div class='xmenu'>  <!-- more than one menu allowed in a single option -->
+          ...
+       </div>
+      </div>
+      <div class='x2item'>
+       <a href='#'>A Option</a>
+      </div>
+     </div>
+    </div>
+
+*/
+
+@media print {
+ div.xmenu, div.x2menu { display: none; }
+}
+
+div.xmenu, div.x2menu {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+div.xmenu img, div.x2menu img {
+ vertical-align: middle;
+}
+
+div.xmenu div.ops, div.x2menu div.x2ops {
+  font: bold 12px Verdana, Arial, Helvetica, sans-serif;
+  display: none;
+  border: 1px solid #804000;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+div.xmenu:hover div.ops, div.x2menu:hover div.x2ops {
+  display: block;
+  position: absolute;
+  z-index: 100;
+}
+
+div.xmenu a, div.xmenu .dummy, div.xmenu div.x2item,
+div.x2menu a, div.x2menu .dummy, div.-x2menu div.x2item,
+div.x2ops div.x2title {
+  display: block;
+  border: 1px solid #804000;
+  padding: 4px 10px 4px 10px;
+  color: #804000;
+  background: #ffffff;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+div.x2ops div.x2title {
+  cursor: default;
+  background-color: #ffefd5;
+}
+
+div.xmenu div.x2title {
+  cursor: default;
+  background-color: #ffefd5;
+  text-align: center;
+}
+
+div.xmenu div.x2title {
+  font-size: 85%;
+}
+
+div.xmenu:hover a:hover, div.x2item:hover a:hover {
+  background: #ffcc00;
+}
+
+div.xmenu .dummy {
+ color: #808080;
+ cursor: default;
+}
+
+div.xmenu .dummy:hover {
+ background-color: #ffffff;
+}
+
+div.x2menu a.default {
+ border-style: none;
+ padding: 0;
+ margin: 0;
+ background-color: transparent;
+}
+
+/* End of xmenu.css file */
+

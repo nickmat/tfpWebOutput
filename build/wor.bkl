@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Name:        build/wor.bkl
+ * Project:     wor: Web Output for The Family Pack Rec Library.
+ * Purpose:     The bakefile source for building the wor library.
+ * Author:      Nick Matthews
+ * Website:     http://thefamilypack.org
+ * Created:     15th December 2012
+ * Copyright:   Copyright (c) 2012 ~ 2017, Nick Matthews.
+ * Licence:     GNU GPLv3
+ *
+ *  The Family Pack is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The Family Pack is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with The Family Pack.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-->
+
+<makefile>
+
+  <set var="LOCALWOR_SRC">../$(REL_ROOT)/tfp_wor/src</set>
+  <set var="LOCALWOR_INC">../$(REL_ROOT)/tfp_wor/include</set>
+  <set var="LOCALWOR_UTIL">../$(REL_ROOT)/tfp_wor/utils</set>
+
+  <lib id="wor" template="wx-lib,wxlike">
+    <libname>wor$(WXLIBPOSTFIX)</libname>
+    <sources>$(LOCALWOR_SRC)/wor/worFiles.cpp</sources>
+    <sources>$(LOCALWOR_SRC)/wor/worExport.cpp</sources>
+    <sources>$(LOCALWOR_SRC)/wor/worProcess.cpp</sources>
+    <sources>$(LOCALWOR_SRC)/wor/worWrFamily.cpp</sources>
+    <sources>$(LOCALWOR_SRC)/wor/worWrIndividual.cpp</sources>
+
+    <headers>$(LOCALWOR_INC)/wor/worWr.h</headers>
+    <headers>$(LOCALWOR_INC)/wor/worExport.h</headers>
+
+    <headers>$(LOCALWOR_SRC)/wor/worFiles.h</headers>
+
+    <include>$(LOCALWOR_INC)/wor</include>
+    <include>$(LOCALWOR_INC)</include>
+    <include>$(MAIN_INC)</include>
+
+    <sources>$(LOCALWOR_SRC)/dummy.cpp</sources>
+    <precomp-headers-gen>$(LOCALWOR_SRC)/dummy.cpp</precomp-headers-gen>
+    <precomp-headers-location>$(LOCALWOR_INC)</precomp-headers-location>
+    <precomp-headers-header>wx/wxprec.h</precomp-headers-header>
+    <precomp-headers>on</precomp-headers>
+    <precomp-headers-file>wxprec_$(id)</precomp-headers-file>
+
+  </lib>
+
+  <exe id="runWor" template="wxconsole,wxlike">
+    <app-type>console</app-type>
+    <runtime-libs>dynamic</runtime-libs>
+
+    <sources>$(LOCALWOR_SRC)/dummy.cpp</sources>
+    <sources>$(LOCALWOR_UTIL)/wor/runWor.cpp</sources>
+
+    <include>$(LOCALWOR_INC)</include>
+    <include>$(LOCALWOR_SRC)</include>
+    <include>$(MAIN_INC)</include>
+
+    <precomp-headers-gen>$(LOCALWOR_SRC)/dummy.cpp</precomp-headers-gen>
+    <precomp-headers-location>$(LOCALWOR_INC)</precomp-headers-location>
+    <precomp-headers-header>wx/wxprec.h</precomp-headers-header>
+    <precomp-headers>on</precomp-headers>
+    <precomp-headers-file>wxprec_$(id)</precomp-headers-file>
+
+    <library>calendar</library>
+    <library>wxsqlite3</library>
+    <library>rec</library>
+    <library>reccl</library>
+    <library>wor</library>
+    <wx-lib>base</wx-lib>
+  </exe>
+
+</makefile>
+
