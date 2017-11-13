@@ -1,3 +1,3 @@
-file2cpp -v -o ..\worFiles.cpp worFiles.f2c
+file2cpp worFiles.f2c -o ../worFiles.cpp -V
 
 pause

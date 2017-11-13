@@ -1,0 +1,50 @@
+table.list {
+ margin-left: auto;
+ margin-right: auto;
+ border-collapse: collapse;
+ margin-top: 1.5em;
+ margin-bottom: 1.5em;
+ border: 2px solid #804000;
+ font-family: "Times New Roman", serif;
+ max-width: 95%;
+}
+table.list tr.odd {
+ background-color: #f4ebed;
+}
+table.list tr.even {
+ background-color: #e7d8dc;
+}
+table.list th {
+ padding: 0.2em 1em;
+ font-size: 1.25em;
+ font-weight: bold;
+}
+table.list tr.sub th {
+ padding: 0 0.3em;
+ font-size: 0.9em;
+ font-weight: bold;
+}
+table.list td {
+ padding: 0.15em 1em;
+ border-left: 0;
+ border-right: 0;
+ vertical-align: top;
+}
+table.list td.date {
+ text-align: right;
+}
+table.list a:link {
+ text-decoration: none;
+ color: #3300cc;
+ font-weight: bold;
+}
+table.list a:visited {
+ text-decoration: none;
+ color: #3300cc;
+ font-weight: bold;
+}
+table.list a:hover {
+ text-decoration: none;
+ color: #cc0000;
+ font-weight: bold;
+}

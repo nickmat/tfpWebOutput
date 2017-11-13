@@ -30,6 +30,7 @@ extern const char* worFile_livery_css;
 extern const char* worFile_fam_css;
 extern const char* worFile_ind_css;
 extern const char* worFile_xmenu_css;
+extern const char* worFile_tlist_css;
 
 // Image files
 extern const unsigned char wor_bg_png[];

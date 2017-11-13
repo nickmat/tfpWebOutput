@@ -1,4 +1,4 @@
-/* ..\worFiles.cpp - File created by file2cpp */
+/* ../worFiles.cpp - File created by file2cpp 1.0.0 */
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Name:        src/wor/worFiles.f2c
@@ -7,7 +7,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     4th February 2015
- * Copyright:   Copyright (c) 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2015 ~ 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -345,6 +345,57 @@ const char* worFile_xmenu_css =  /* xmenu.css */
  "padding: 0;\n"
  "margin: 0;\n"
  "background-color: transparent;\n"
+ "}\n";
+const char* worFile_tlist_css =  /* tlist.css */
+ "table.list {\n"
+ "margin-left: auto;\n"
+ "margin-right: auto;\n"
+ "border-collapse: collapse;\n"
+ "margin-top: 1.5em;\n"
+ "margin-bottom: 1.5em;\n"
+ "border: 2px solid #804000;\n"
+ "font-family: \"Times New Roman\", serif;\n"
+ "max-width: 95%;\n"
+ "}\n"
+ "table.list tr.odd {\n"
+ "background-color: #f4ebed;\n"
+ "}\n"
+ "table.list tr.even {\n"
+ "background-color: #e7d8dc;\n"
+ "}\n"
+ "table.list th {\n"
+ "padding: 0.2em 1em;\n"
+ "font-size: 1.25em;\n"
+ "font-weight: bold;\n"
+ "}\n"
+ "table.list tr.sub th {\n"
+ "padding: 0 0.3em;\n"
+ "font-size: 0.9em;\n"
+ "font-weight: bold;\n"
+ "}\n"
+ "table.list td {\n"
+ "padding: 0.15em 1em;\n"
+ "border-left: 0;\n"
+ "border-right: 0;\n"
+ "vertical-align: top;\n"
+ "}\n"
+ "table.list td.date {\n"
+ "text-align: right;\n"
+ "}\n"
+ "table.list a:link {\n"
+ "text-decoration: none;\n"
+ "color: #3300cc;\n"
+ "font-weight: bold;\n"
+ "}\n"
+ "table.list a:visited {\n"
+ "text-decoration: none;\n"
+ "color: #3300cc;\n"
+ "font-weight: bold;\n"
+ "}\n"
+ "table.list a:hover {\n"
+ "text-decoration: none;\n"
+ "color: #cc0000;\n"
+ "font-weight: bold;\n"
  "}\n";
 
 // Image files
