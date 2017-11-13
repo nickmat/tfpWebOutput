@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     3 May 2012
- * Copyright:   Copyright (c) 2012 - 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2012 - 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  runScript is free software: you can redistribute it and/or modify
@@ -48,8 +48,8 @@
 
 
 #define PROGNAME         "runWor"
-#define VERSION_NUM      "WOR 0.1.2"
-#define COPYRIGHT_DATE   "2012 ~ 2016"
+#define VERSION_NUM      "WOR 0.1.3"
+#define COPYRIGHT_DATE   "2012 ~ 2017"
 
 #define VERSION_STATUS   " private"
 
@@ -181,6 +181,7 @@ int main( int argc, char** argv )
     wor.SetImagePath( conf.Read( "/Input/Image-Text-Path", "" ) );
     wor.SetIncludeHome( conf.ReadBool( "/Output/Home-Page", false ) );
     wor.SetIncludeInd( conf.ReadBool( "/Output/Individuals", true ) );
+    wor.SetIncludeNames( conf.ReadBool( "/Output/Names", true ) );
     wor.SetIncludeRef( conf.ReadBool( "/Output/References", true ) );
     long privacy = conf.ReadLong( "/Output/Privacy", 100 );
     wor.SetPrivacy( privacy );
