@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     15th December 2012
- * Copyright:   Copyright (c) 2012 - 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2012 ~ 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -298,7 +298,7 @@ void worExport::OutputFamilyPage( idt famID ) const
             htm << "<tr>\n<td class='"
                 << GetSexClass( kids[i].f_id )
                 << " kids'>\n"
-                << WrXMenuFamily( kids[i].FGetID(), X2MF_IncHeart2|X2MF_IncClub )
+                << WrXMenuFamily( kids[i].FGetID(), X2MF_IncHeart|X2MF_IncClub )
                 << "<b><a href='" << link << "'>"
                 << kids[i].FGetName()
                 << "</a></b>&nbsp;&nbsp;"
