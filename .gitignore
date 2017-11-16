@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Used for run tests.
+run
