@@ -38,6 +38,7 @@
     <sources>$(LOCALWOR_SRC)/wor/worProcess.cpp</sources>
     <sources>$(LOCALWOR_SRC)/wor/worWrFamily.cpp</sources>
     <sources>$(LOCALWOR_SRC)/wor/worWrIndividual.cpp</sources>
+    <sources>$(LOCALWOR_SRC)/wor/worWrNames.cpp</sources>
 
     <headers>$(LOCALWOR_INC)/wor/worWr.h</headers>
     <headers>$(LOCALWOR_INC)/wor/worExport.h</headers>

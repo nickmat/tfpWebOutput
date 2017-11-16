@@ -33,6 +33,7 @@
 // See src/wor/worProcess.cpp
 extern wxString GetTodayStr();
 extern wxString GetSexClass( idt indID, Sex pref = SEX_Unknown );
+inline wxString GetEvenOddClass( int row ) { return ( row % 2 ) ? "odd" : "even"; }
 
 // See src/wor/worWrFamily.cpp
 

@@ -44,7 +44,8 @@
 
 worExport::worExport( const wxString& outpath, const wxString& version )
     : m_outpath(outpath),
-    m_includeHome(false), m_includeInd(false), m_includeRef(false),
+    m_includeHome(false), m_includeInd( false ), m_includeNames( false ),
+    m_includeRef(false),
     m_privacy(100), m_dataPrivacy(100), m_version(version)
 {
     m_homeFamPath = GetFamFileName( 1, 0 );
@@ -82,9 +83,13 @@ bool worExport::ExportPages()
         }
         OutputSysFile( "sys/ind.css", worFile_ind_css );
     }
+    if ( m_includeNames ) {
+        OutputSurnameIndex();
+    }
     OutputSysFile( "sys/livery.css", worFile_livery_css );
     OutputSysFile( "sys/fam.css", worFile_fam_css );
     OutputSysFile( "sys/xmenu.css", worFile_xmenu_css );
+    OutputSysFile( "sys/tlist.css", worFile_tlist_css );
 
     OutputBinFile( "sys/bg.png", wor_bg_png, wor_sizeof_bg_png );
     OutputBinFile( "sys/club.png", wor_club_png, wor_sizeof_club_png );
@@ -146,6 +151,16 @@ wxString worExport::GetFileName( idt id, const wxString& code, const wxString& e
     int dir = ( ( id - 1 ) / 500 ) + 1;
     return GetBasePath( level )
         + wxString::Format( "%s%02d/%s%05d.%s", code, dir, code, num, ext );
+}
+
+wxString worExport::GetNListFileName( const wxString & letter, unsigned level ) const
+{
+    char ch = tolower( letter[0] );
+    wxString cstr(ch);
+    if ( ch == '?' ) {
+        cstr = "qm";
+    }
+    return GetBasePath( level ) + wxString::Format( "ind/n_%s.htm", cstr );
 }
 
 wxString worExport::GetHeader(

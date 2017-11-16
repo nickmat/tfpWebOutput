@@ -41,13 +41,13 @@ public:
     bool InitMenuBar( const wxFileConfig& config );
     void SetIncludeHome( bool incHome ) { m_includeHome = incHome; }
     void SetIncludeInd( bool incInd ) { m_includeInd = incInd; }
+    void SetIncludeNames( bool incNames ) { m_includeNames = incNames; }
     void SetIncludeRef( bool incRef ) { m_includeRef = incRef; }
     void SetPrivacy( int privacy ) { m_privacy = privacy; }
     void SetDataPrivacy( int privacy ) { m_dataPrivacy = privacy; }
 
     bool ExportPages();
 
-private:
     enum {
         MB_Home, MB_Family, MB_Name, MB_Gallery, MB_Chart, MB_Source, MB_Research,
         MB_MAX
@@ -63,6 +63,7 @@ private:
         { return GetFileName( imgID, "im", "jpg", level ); }
     wxString GetGalFileName( idt galID, unsigned level = 1 ) const
         { return GetFileName( galID, "ga", "htm", level ); }
+    wxString GetNListFileName( const wxString& letter, unsigned level = 1 ) const;
 
     wxString GetHeader(
         unsigned level, const wxString& title,
@@ -104,15 +105,19 @@ private:
     wxString HtmlifyPhotos( const wxString& photos ) const;
     void OutputIndividualPage( idt indID ) const;
 
+    void OutputSurnameIndex() const;
+
+private:
     wxString m_imageTextPath; // TODO: Temp, until images are included in database.
     wxString m_outpath;
     wxString m_menuBar[MB_MAX];
     wxString m_homeFamPath;
-    bool     m_includeHome; // Include Home page.
-    bool     m_includeInd;  // Include Individual pages.
-    bool     m_includeRef;  // Include Reference pages.
-    int      m_privacy;     // 0 = only if ind.FGetPrivacy() = 0, 100 = everything.
-    int      m_dataPrivacy; // As m_privacy but allows name and relationships.
+    bool     m_includeHome;  // Include Home page.
+    bool     m_includeInd;   // Include Individual pages.
+    bool     m_includeNames; // Include Name index and lists.
+    bool     m_includeRef;   // Include Reference pages.
+    int      m_privacy;      // 0 = only if ind.FGetPrivacy() = 0, 100 = everything.
+    int      m_dataPrivacy;  // As m_privacy but allows name and relationships.
     wxString m_version;
 };
 
