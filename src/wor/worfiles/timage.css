@@ -1,10 +1,10 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * Name:        src/wor/worfiles/tlist.css
+ * Name:        src/wor/worfiles/timage.css
  * Project:     The Family Pack WOR: Web Output for TFP Rec Library.
- * Purpose:     The css used by lists designed as tables.
+ * Purpose:     The css used to display an image plus notes as a table.
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
- * Created:     13th November 2017
+ * Created:     19th November 2017
  * Copyright:   Copyright (c) 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
@@ -25,63 +25,33 @@
 
 */
 
-table.list {
- margin-left: auto;
- margin-right: auto;
- border-collapse: collapse;
- margin-top: 1.5em;
- margin-bottom: 1.5em;
+table.image {
+ width: 90%;
+ background-color: #fff;
  border: 2px solid #804000;
- font-family: "Times New Roman", serif;
- max-width: 95%;
+ border-radius: 15px;
+ box-shadow: 10px 10px 5px #aaa;
+ margin: 0 auto 2em auto;
+ text-align: left;
+ page-break-inside: avoid;
 }
 
-table.list tr.odd {
- background-color: #f4ebed;
-}
-
-table.list tr.even {
- background-color: #e7d8dc;
-}
-
-table.list th {
- padding: 0.2em 1em;
- font-size: 1.2em;
+table.image td.pictitle {
+ font-size: x-large;
  font-weight: bold;
  text-align: center;
 }
 
-table.list th.sublist {
- border-top: 2px solid #804000;
+table.image td.pictitle span.refnum {
+ float: left;
+ font-size: medium;
+ padding: 0.25em 1em 0 1em;
 }
 
-table.list td {
- padding: 0.15em 1em;
- border-left: 0;
- border-right: 0;
- vertical-align: top;
+table.image td.image img {
+ margin: 0 1em 1em 1em;
+ border: 1px solid black;
+ box-shadow: 4px 4px 2px #888;
 }
 
-table.list td.date {
- text-align: right;
-}
-
-table.list a:link {
- text-decoration: none;
- color: #3300cc;
- font-weight: bold;
-}
-
-table.list a:visited {
- text-decoration: none;
- color: #3300cc;
- font-weight: bold;
-}
-
-table.list a:hover {
- text-decoration: none;
- color: #cc0000;
- font-weight: bold;
-}
-
-/* End of src/wor/worfiles/tlist.css file */
+/* End of src/wor/worfiles/timage.css file */

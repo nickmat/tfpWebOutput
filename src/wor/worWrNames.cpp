@@ -158,7 +158,7 @@ wxString NameList::GetSurnameIndexTable( const worExport& exp )
             ;
         count++;
     }
-    htm += "</tr>\n</table>\n";
+    htm += "\n</td>\n</tr>\n</table>\n";
     return htm;
 }
 

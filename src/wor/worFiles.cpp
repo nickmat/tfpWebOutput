@@ -233,6 +233,9 @@ const char* worFile_fam_css =  /* fam.css */
  "padding: 0 0.5em;\n"
  "}\n";
 const char* worFile_ind_css =  /* ind.css */
+ "span.hmenu a {\n"
+ "background-color: #eed0ee;\n"
+ "}\n"
  "a {\n"
  "color: #000;\n"
  "text-decoration: none;\n"
@@ -274,6 +277,9 @@ const char* worFile_ind_css =  /* ind.css */
  "}\n"
  "td.core2 {\n"
  "padding: 0.3em;\n"
+ "}\n"
+ "td.core.core2 {\n"
+ "background-color: #eed0ee;\n"
  "}\n"
  "table.core2 {\n"
  "width: 100%;\n"
@@ -395,6 +401,32 @@ const char* worFile_tlist_css =  /* tlist.css */
  "text-decoration: none;\n"
  "color: #cc0000;\n"
  "font-weight: bold;\n"
+ "}\n";
+const char* worFile_timage_css =  /* timage.css */
+ "table.image {\n"
+ "width: 90%;\n"
+ "background-color: #fff;\n"
+ "border: 2px solid #804000;\n"
+ "border-radius: 15px;\n"
+ "box-shadow: 10px 10px 5px #aaa;\n"
+ "margin: 0 auto 2em auto;\n"
+ "text-align: left;\n"
+ "page-break-inside: avoid;\n"
+ "}\n"
+ "table.image td.pictitle {\n"
+ "font-size: x-large;\n"
+ "font-weight: bold;\n"
+ "text-align: center;\n"
+ "}\n"
+ "table.image td.pictitle span.refnum {\n"
+ "float: left;\n"
+ "font-size: medium;\n"
+ "padding: 0.25em 1em 0 1em;\n"
+ "}\n"
+ "table.image td.image img {\n"
+ "margin: 0 1em 1em 1em;\n"
+ "border: 1px solid black;\n"
+ "box-shadow: 4px 4px 2px #888;\n"
  "}\n";
 
 // Image files

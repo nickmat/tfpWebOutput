@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     4th February 2015
- * Copyright:   Copyright (c) 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2015 ~ 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -31,6 +31,7 @@ extern const char* worFile_fam_css;
 extern const char* worFile_ind_css;
 extern const char* worFile_xmenu_css;
 extern const char* worFile_tlist_css;
+extern const char* worFile_timage_css;
 
 // Image files
 extern const unsigned char wor_bg_png[];

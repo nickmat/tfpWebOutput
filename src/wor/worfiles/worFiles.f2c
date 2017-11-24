@@ -42,6 +42,7 @@ const char* worFile_fam_css = @(lrc.c)"fam.css";
 const char* worFile_ind_css = @(lrc.c)"ind.css";
 const char* worFile_xmenu_css = @(lrc.c)"xmenu.css";
 const char* worFile_tlist_css = @(lrc.c)"tlist.css";
+const char* worFile_timage_css = @(lrc.c)"timage.css";
 
 // Image files
 const unsigned char wor_bg_png[] = @{bg.png};

@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     17th August 2016
- * Copyright:   Copyright (c) 2016, Nick Matthews.
+ * Copyright:   Copyright (c) 2016 ~ 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -159,14 +159,14 @@ wxString worExport::GetPhotoPanel( int image, const wxString& title ) const
     wxString galFName = GetGalFileName( gallery );
     wxString imFName = GetImgFileName( image );
 
-    htm << "<center><table class='image'>\n"
+    htm << "<table class='image'>\n"
            "<tr><td colspan='2' class='pictitle'>"
-           "<div class='refnum'>Im" << image 
+           "<span class='refnum'>Im" << image 
         << " &nbsp; <a href='" << galFName << "'>G" << gallery 
-        << "</a></div>" << title << "</td></tr>\n"
+        << "</a></span>" << title << "</td></tr>\n"
            "<tr><td class='image'><a href='" << imFName 
-        << "'><img src='" << imFName << "' alt='' height='200px' /></a></td><td>\n"
-        << desc << "</td></tr></table></center>\n";
+        << "'><img src='" << imFName << "' alt='' height='200' /></a></td><td>\n"
+        << desc << "</td></tr></table>\n";
 
     return htm;
 }
@@ -206,7 +206,7 @@ void worExport::OutputIndividualPage( idt indID ) const
     StringVec css;
     css.push_back( "xmenu" );
     css.push_back( "ind" );
-    css.push_back( "gallery" );
+    css.push_back( "timage" );
     wxString menuBar = GetMenuBar( 1 );
 
     recIndividual ind(indID);
@@ -227,7 +227,15 @@ void worExport::OutputIndividualPage( idt indID ) const
         "</a> " + ind.FGetEpitaph() + "</td>\n"
         "</tr>\n"
     ;
-    // TODO: Include alias names.
+    recNameVec names = ind.GetNames();
+    for ( size_t i = 1; i < names.size(); i++ ) {
+        htm +=
+            "<tr>\n"
+            "<td class='core'><b>" + names[i].GetTypeStr() + " Name</b></td>\n"
+            "<td class='core'>" + names[i].GetNameStr() + "</td>\n"
+            "</tr>\n"
+        ;
+    }
     htm += OutputEventRow( ind.GetBirthEvent() );
     recIdVec eveIDs = ind.FindEvents( recET_GRP_NrBirth );
     for( size_t i = 0 ; i < eveIDs.size() ; i++ ) {
@@ -276,7 +284,8 @@ void worExport::OutputIndividualPage( idt indID ) const
     fams = ind.GetFamilyList();
     for( size_t i = 0 ; i < fams.size() ; i++ ) {
         idt spouseID = fams[i].GetSpouseID( indID );
-        if( spouseID == 0 ) {
+        recIdVec childIDs = recFamily::GetChildrenIds( fams[i].FGetID() );
+        if( spouseID == 0 && childIDs.empty() ) {
             continue;
         }
         htm +=
@@ -326,7 +335,6 @@ void worExport::OutputIndividualPage( idt indID ) const
             htm += "</td>\n</tr>\n";
         }
 
-        recIdVec childIDs = recFamily::GetChildrenIds( fams[i].FGetID() );
         for( size_t j = 0 ; j < childIDs.size() ; j++ ) {
             htm += "<tr>\n";
             if( j == 0 ) {

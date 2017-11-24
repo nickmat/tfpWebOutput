@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     30th October 2015
- * Copyright:   Copyright (c) 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2015 ~ 2017, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -90,6 +90,7 @@ bool worExport::ExportPages()
     OutputSysFile( "sys/fam.css", worFile_fam_css );
     OutputSysFile( "sys/xmenu.css", worFile_xmenu_css );
     OutputSysFile( "sys/tlist.css", worFile_tlist_css );
+    OutputSysFile( "sys/timage.css", worFile_timage_css );
 
     OutputBinFile( "sys/bg.png", wor_bg_png, wor_sizeof_bg_png );
     OutputBinFile( "sys/club.png", wor_club_png, wor_sizeof_club_png );
@@ -520,14 +521,16 @@ wxString worExport::WrXMenuFamily( idt indID, unsigned flags, idt blankIndID, id
 
 wxString worExport::WrIndNameCell( idt indID ) const
 {
-    wxString htm =
+    if ( indID == 0 ) {
+        return "<td class='core neut'>[Partner unknown]</td>\n";
+    }
+    return
         "<td class='core " + GetSexClass( indID ) +
         "'>\n" + WrXMenuFamily( indID, X2MF_All ) + 
         "<a href='" + GetIndFileName( indID ) +
         "'>"  + recIndividual::GetNameStr( indID ) +
         "</a> " + recIndividual::GetEpitaph( indID ) + "\n</td>\n"
     ;
-    return htm;
 }
 
 wxString worExport::WrRefList( const recIdVec& refIDs ) const
