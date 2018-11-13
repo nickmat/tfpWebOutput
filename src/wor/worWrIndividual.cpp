@@ -237,13 +237,13 @@ void worExport::OutputIndividualPage( idt indID ) const
         ;
     }
     htm += OutputEventRow( ind.GetBirthEvent() );
-    recIdVec eveIDs = ind.FindEvents( recET_GRP_NrBirth );
+    recIdVec eveIDs = ind.FindGroupEvents( recET_GRP_NrBirth );
     for( size_t i = 0 ; i < eveIDs.size() ; i++ ) {
         htm += OutputEventRow( eveIDs[i] );
     }
     
     htm += OutputEventRow( ind.GetDeathEvent() );
-    eveIDs = ind.FindEvents( recET_GRP_NrDeath );
+    eveIDs = ind.FindGroupEvents( recET_GRP_NrDeath );
     for( size_t i = 0 ; i < eveIDs.size() ; i++ ) {
         htm += OutputEventRow( eveIDs[i] );
     }
@@ -308,13 +308,13 @@ void worExport::OutputIndividualPage( idt indID ) const
         ;
 
         htm += OutputEventRow( recIndividual::GetBirthEvent( spouseID ) );
-        eveIDs = recIndividual::FindEvents( spouseID, recET_GRP_NrBirth );
+        eveIDs = recIndividual::FindGroupEvents( spouseID, recET_GRP_NrBirth );
         for( size_t j = 0 ; j < eveIDs.size() ; j++ ) {
             htm += OutputEventRow( eveIDs[j] );
         }
         
         htm += OutputEventRow( recIndividual::GetDeathEvent( spouseID ) );
-        eveIDs = recIndividual::FindEvents( spouseID, recET_GRP_NrDeath );
+        eveIDs = recIndividual::FindGroupEvents( spouseID, recET_GRP_NrDeath );
         for( size_t j = 0 ; j < eveIDs.size() ; j++ ) {
             htm += OutputEventRow( eveIDs[j] );
         }
