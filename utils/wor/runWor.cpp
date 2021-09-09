@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     3 May 2012
- * Copyright:   Copyright (c) 2012 - 2017, Nick Matthews.
+ * Copyright:   Copyright (c) 2012 - 2021, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  runScript is free software: you can redistribute it and/or modify
@@ -167,7 +167,7 @@ int main( int argc, char** argv )
         wxPrintf( "Input file \"%s\" not found.\n", inName.GetFullPath() );
         return EXIT_FAILURE;
     }
-    if( recDb::OpenDb( inName.GetFullPath() ) ) {
+    if( recDb::OpenDb( inName.GetFullPath() ) != recDb::DbType::db_null ) {
         if( verbose ) {
             wxPrintf( "Opened Database file \"%s\".\n", inName.GetFullPath() );
         }
