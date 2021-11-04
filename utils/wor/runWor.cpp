@@ -135,7 +135,7 @@ int main( int argc, char** argv )
     recDb::SetDb( new wxSQLite3Database() );
     if( verbose ) {
         wxPrintf( "SQLite3 version: %s\n", wxSQLite3Database::GetVersion() );
-        wxPrintf( "TFPD version: %s\n", recVerStr );
+        wxPrintf( "TFPD version: %s\n", recFullVersion );
     }
 
     wxFileName configName( parser.GetParam() );
