@@ -264,7 +264,7 @@ void worExport::OutputIndividualPage( idt indID ) const
         htm += "</td>\n</tr>\n";
     }
 
-    recFamilyVec fams = ind.GetParentList();
+    recFamilyVec fams = recFamily::GetParentList( indID );
     for( size_t i = 0 ; i < fams.size() ; i++ ) {
         if( fams[i].FGetHusbID() ) {
             htm +=
@@ -281,7 +281,7 @@ void worExport::OutputIndividualPage( idt indID ) const
             ;
         }
     }
-    fams = ind.GetFamilyList();
+    fams = recFamily::GetFamilyList( indID );
     for( size_t i = 0 ; i < fams.size() ; i++ ) {
         idt spouseID = fams[i].GetSpouseID( indID );
         recIdVec childIDs = recFamily::GetChildrenIds( fams[i].FGetID() );

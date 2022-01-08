@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     15th December 2012
- * Copyright:   Copyright (c) 2012 ~ 2017, Nick Matthews.
+ * Copyright:   Copyright (c) 2012..2022, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -52,17 +52,18 @@ void worExport::OutputFamilyPage( idt famID ) const
     }
     wxString menuBar = GetMenuBar( 1, thispage );
     recFamily fam(famID);
-    recIndividual husb( fam.FGetHusbID() );
-    recIndividual wife( fam.FGetWifeID() );
-    recFamilyVec husbFams = husb.GetParentList();
-    recFamilyVec wifeFams = wife.GetParentList();
+    idt hIndID = fam.FGetHusbID();
+    idt wIndID = fam.FGetWifeID();
 
-    idt hIndID = husb.FGetID();
-    idt wIndID = wife.FGetID();
+    recIndividual husb( hIndID );
+    recIndividual wife( wIndID );
+
+    recFamilyVec husbFams = recFamily::GetParentList( hIndID );
+    recFamilyVec wifeFams = recFamily::GetParentList( wIndID );
 
     recIndividualList kids = fam.GetChildren();
-    recFamilyVec husbWives = recIndividual::GetFamilyList( hIndID );
-    recFamilyVec wifeHusbs = recIndividual::GetFamilyList( wIndID );
+    recFamilyVec husbWives = recFamily::GetFamilyList( hIndID );
+    recFamilyVec wifeHusbs = recFamily::GetFamilyList( wIndID );
 
     StringVec css;
     css.push_back( "xmenu" );

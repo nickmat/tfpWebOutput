@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     30th October 2015
- * Copyright:   Copyright (c) 2015 ~ 2017, Nick Matthews.
+ * Copyright:   Copyright (c) 2015..2022, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -284,7 +284,7 @@ wxString worExport::GetMenuBar( unsigned level, const wxString& thispage ) const
 wxString worExport::WrXMenuDiamond( idt indID ) const
 {
     wxString mnu;
-    recFamilyVec fams = recIndividual::GetParentList( indID );
+    recFamilyVec fams = recFamily::GetParentList( indID );
     if( fams.size() ) {
         mnu << 
             "<div class='xmenu'>\n"
@@ -326,7 +326,7 @@ wxString worExport::WrXMenuDiamond( idt indID ) const
 wxString worExport::WrXMenuSpade( idt indID ) const
 {
     wxString mnu;
-    recFamilyVec fams = recIndividual::GetParentList( indID );
+    recFamilyVec fams = recFamily::GetParentList( indID );
     if( fams.size() == 0 ) {
         return "";
     }
@@ -372,7 +372,7 @@ wxString worExport::WrXMenuSpade( idt indID ) const
 
 wxString worExport::WrXMenuHeart( idt indID, size_t min_size ) const
 {
-    recFamilyVec fams = recIndividual::GetFamilyList( indID );
+    recFamilyVec fams = recFamily::GetFamilyList( indID );
     recIdVec partners;
     recIdVec famIDs;
     for( size_t i = 0 ; i < fams.size() ; i++ ) {
@@ -421,7 +421,7 @@ wxString worExport::WrXMenuHeart( idt indID, size_t min_size ) const
 wxString worExport::WrXMenuClub( idt indID, idt blankIndID, idt blankFamID ) const
 {
     wxString mnu;
-    recFamilyVec fams = recIndividual::GetFamilyList( indID );
+    recFamilyVec fams = recFamily::GetFamilyList( indID );
     recIdVec children;
     recIdVec famIDs;
     int priv = 0, options = 0;
