@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     17th August 2016
- * Copyright:   Copyright (c) 2016 ~ 2017, Nick Matthews.
+ * Copyright:   Copyright (c) 2016..2022, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -237,13 +237,13 @@ void worExport::OutputIndividualPage( idt indID ) const
         ;
     }
     htm += OutputEventRow( ind.GetBirthEvent() );
-    recIdVec eveIDs = ind.FindGroupEvents( recET_GRP_NrBirth );
+    recIdVec eveIDs = ind.FindGroupEvents( recEventTypeGrp::nr_birth );
     for( size_t i = 0 ; i < eveIDs.size() ; i++ ) {
         htm += OutputEventRow( eveIDs[i] );
     }
     
     htm += OutputEventRow( ind.GetDeathEvent() );
-    eveIDs = ind.FindGroupEvents( recET_GRP_NrDeath );
+    eveIDs = ind.FindGroupEvents( recEventTypeGrp::nr_death );
     for( size_t i = 0 ; i < eveIDs.size() ; i++ ) {
         htm += OutputEventRow( eveIDs[i] );
     }
@@ -308,13 +308,13 @@ void worExport::OutputIndividualPage( idt indID ) const
         ;
 
         htm += OutputEventRow( recIndividual::GetBirthEvent( spouseID ) );
-        eveIDs = recIndividual::FindGroupEvents( spouseID, recET_GRP_NrBirth );
+        eveIDs = recIndividual::FindGroupEvents( spouseID, recEventTypeGrp::nr_birth );
         for( size_t j = 0 ; j < eveIDs.size() ; j++ ) {
             htm += OutputEventRow( eveIDs[j] );
         }
         
         htm += OutputEventRow( recIndividual::GetDeathEvent( spouseID ) );
-        eveIDs = recIndividual::FindGroupEvents( spouseID, recET_GRP_NrDeath );
+        eveIDs = recIndividual::FindGroupEvents( spouseID, recEventTypeGrp::nr_death );
         for( size_t j = 0 ; j < eveIDs.size() ; j++ ) {
             htm += OutputEventRow( eveIDs[j] );
         }
