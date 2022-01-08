@@ -330,7 +330,7 @@ wxString worExport::WrXMenuSpade( idt indID ) const
     if( fams.size() == 0 ) {
         return "";
     }
-    recIndividualList inds = fams[0].GetChildren();
+    recIndividualVec inds = recIndividual::GetChildren( fams[0].FGetID() );
     if( inds.size() < 2 ) {
         return "";
     }

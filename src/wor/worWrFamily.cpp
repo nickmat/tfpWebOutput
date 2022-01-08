@@ -61,7 +61,7 @@ void worExport::OutputFamilyPage( idt famID ) const
     recFamilyVec husbFams = recFamily::GetParentList( hIndID );
     recFamilyVec wifeFams = recFamily::GetParentList( wIndID );
 
-    recIndividualList kids = fam.GetChildren();
+    recIndividualVec kids = recIndividual::GetChildren( famID );
     recFamilyVec husbWives = recFamily::GetFamilyList( hIndID );
     recFamilyVec wifeHusbs = recFamily::GetFamilyList( wIndID );
 
