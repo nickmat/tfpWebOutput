@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     15 December 2012
- * Copyright:   Copyright (c) 2012 - 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2012..2022, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@
 
 // See src/wor/worProcess.cpp
 extern wxString GetTodayStr();
-extern wxString GetSexClass( idt indID, Sex pref = SEX_Unknown );
+extern wxString GetSexClass( idt indID, Sex pref = Sex::unknown );
 inline wxString GetEvenOddClass( int row ) { return ( row % 2 ) ? "odd" : "even"; }
 
 // See src/wor/worWrFamily.cpp

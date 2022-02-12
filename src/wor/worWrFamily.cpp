@@ -102,7 +102,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     recIndividual::GetName( husbFams[i].FGetHusbID() ) + "</a>\n";
             }
             htm += "<tr>\n<td class='" +
-                GetSexClass( husbFams[i].FGetHusbID(), SEX_Male ) + "'>\n" +
+                GetSexClass( husbFams[i].FGetHusbID(), Sex::male ) + "'>\n" +
                 WrXMenuFamily( husbFams[i].FGetHusbID(), X2MF_Default, fam.FGetHusbID() ) +
                 name + "<br />\n" +
                 recIndividual::GetEpitaph( husbFams[i].FGetHusbID() ) +
@@ -122,7 +122,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     recIndividual::GetName( husbFams[i].FGetWifeID() ) + "</a>\n";
             }
             htm += "<tr>\n<td class='" +
-                GetSexClass( husbFams[i].FGetWifeID(), SEX_Female ) + "'>\n" +
+                GetSexClass( husbFams[i].FGetWifeID(), Sex::female ) + "'>\n" +
                 WrXMenuFamily( husbFams[i].FGetWifeID(), X2MF_Default, fam.FGetHusbID() ) +
                 name + "<br />\n" +
                 recIndividual::GetEpitaph( husbFams[i].FGetWifeID() ) +
@@ -158,7 +158,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     recIndividual::GetName( wifeFams[i].FGetHusbID() ) + "</a>\n";
             }
             htm += "<tr>\n<td class='" +
-                GetSexClass( wifeFams[i].FGetHusbID(), SEX_Male ) + "'>\n" +
+                GetSexClass( wifeFams[i].FGetHusbID(), Sex::male ) + "'>\n" +
                 WrXMenuFamily( wifeFams[i].FGetHusbID(), X2MF_Default, fam.FGetWifeID() ) +
                 name + "<br />\n" +
                 recIndividual::GetEpitaph( wifeFams[i].FGetHusbID() ) +
@@ -178,7 +178,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     recIndividual::GetName( wifeFams[i].FGetWifeID() ) + "</a>\n";
             }
             htm += "<tr>\n<td class='" +
-                GetSexClass( wifeFams[i].FGetWifeID(), SEX_Female ) + "'>\n" +
+                GetSexClass( wifeFams[i].FGetWifeID(), Sex::female ) + "'>\n" +
                 WrXMenuFamily( wifeFams[i].FGetWifeID(), X2MF_Default, fam.FGetWifeID() ) +
                 name + "<br />\n" +
                 recIndividual::GetEpitaph( wifeFams[i].FGetWifeID() ) +
@@ -207,7 +207,7 @@ void worExport::OutputFamilyPage( idt famID ) const
     }
     // The happy couple
     htm << "<tr>\n<td class='couple "
-        << GetSexClass( fam.FGetHusbID(), SEX_Male )
+        << GetSexClass( fam.FGetHusbID(), Sex::male )
         << "'>";
     if( fam.FGetHusbID() == 0 ) {
         htm << "&nbsp;";
@@ -226,7 +226,7 @@ void worExport::OutputFamilyPage( idt famID ) const
         }
     }
     htm << "</td>\n<td class='couple "
-        << GetSexClass( fam.FGetWifeID(), SEX_Female )
+        << GetSexClass( fam.FGetWifeID(), Sex::female )
         << "'>";
     if( fam.FGetWifeID() == 0 ) {
         htm << "&nbsp;";
@@ -334,7 +334,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     continue;
                 }
                 htm << "<tr>\n<td class='"
-                    << GetSexClass( husbWives[i].f_wife_id, SEX_Female ) << "'>\n"
+                    << GetSexClass( husbWives[i].f_wife_id, Sex::female ) << "'>\n"
                     << WrXMenuFamily( husbWives[i].f_wife_id, X2MF_Default )
                     << "<a href='" << link << "'>";
                 if( husbWives[i].f_wife_id == 0 ) {
@@ -372,7 +372,7 @@ void worExport::OutputFamilyPage( idt famID ) const
                     continue;
                 }
                 htm << "<tr>\n<td class='"
-                    << GetSexClass( wifeHusbs[i].f_husb_id, SEX_Male ) << "'>\n"
+                    << GetSexClass( wifeHusbs[i].f_husb_id, Sex::male ) << "'>\n"
                     << WrXMenuFamily( wifeHusbs[i].f_husb_id, X2MF_Default )
                     << "<a href='" << link << "'>"
                 ;

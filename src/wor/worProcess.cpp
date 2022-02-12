@@ -5,7 +5,7 @@
  * Author:      Nick Matthews
  * Website:     http://thefamilypack.org
  * Created:     15th December 2012
- * Copyright:   Copyright (c) 2012 - 2015, Nick Matthews.
+ * Copyright:   Copyright (c) 2012..2022, Nick Matthews.
  * Licence:     GNU GPLv3
  *
  *  The Family Pack is free software: you can redistribute it and/or modify
@@ -90,13 +90,13 @@ wxString GetTodayStr()
 wxString GetSexClass( idt indID, Sex pref )
 {
     Sex sex = recIndividual::GetSex( indID );
-    if( sex == SEX_Unstated ) {
+    if( sex == Sex::unstated ) {
         sex = pref;
     }
     switch( sex ) {
-    case SEX_Male:
+    case Sex::male:
         return "male";
-    case SEX_Female:
+    case Sex::female:
         return "fem";
     }
     return "neut";
