@@ -564,8 +564,8 @@ wxString worExport::WrRefList( const recIdVec& refIDs ) const
 void worExport::OutputHtmFile( const wxString& name, const wxString& content ) const
 {
     wxFileName fname( name );
-    fname.Normalize( wxPATH_NORM_ALL, m_outpath );
-    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_ALL );
+    fname.Normalize( wxPATH_NORM_DOTS, m_outpath );
+    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_DOTS );
     wxFFile outfile( fname.GetFullPath(), "w" );
     if( !outfile.IsOpened() ) return;
 
@@ -577,8 +577,8 @@ void worExport::OutputHtmFile( const wxString& name, const wxString& content ) c
 void worExport::OutputSysFile( const wxString& name, const char* text ) const
 {
     wxFileName fname( name );
-    fname.Normalize( wxPATH_NORM_ALL, m_outpath );
-    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_ALL );
+    fname.Normalize( wxPATH_NORM_DOTS, m_outpath );
+    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_DOTS );
     wxFFile outfile( fname.GetFullPath(), "w" );
     if( !outfile.IsOpened() ) return;
 
@@ -590,8 +590,8 @@ void worExport::OutputSysFile( const wxString& name, const char* text ) const
 void worExport::OutputBinFile( const wxString& name, const unsigned char* data, size_t size ) const
 {
     wxFileName fname( name );
-    fname.Normalize( wxPATH_NORM_ALL, m_outpath );
-    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_ALL );
+    fname.Normalize( wxPATH_NORM_DOTS, m_outpath );
+    fname.Mkdir( wxS_DIR_DEFAULT, wxPATH_NORM_DOTS );
     wxFFile outfile( fname.GetFullPath(), "wb" );
     if( !outfile.IsOpened() ) return;
 
