@@ -80,6 +80,7 @@
     <library>rec</library>
     <library>reccl</library>
     <library>wor</library>
+    <wx-lib>core</wx-lib>
     <wx-lib>base</wx-lib>
   </exe>
 
