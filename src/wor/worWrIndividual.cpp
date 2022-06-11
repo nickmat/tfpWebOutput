@@ -98,7 +98,7 @@ wxString worExport::HtmlifyNotes( const wxString& note ) const
                 str += note.substr( pos, pos1-pos );
                 str +=
                     "<sup>[<a href='" + GetRefFileName( refID ) + 
-                    "'>R" + recGetIDStr( refID ) + "</a>]</sup>"
+                    "'>R" + recGetStr( refID ) + "</a>]</sup>"
                 ;
                 pos = pos2+1;
             }
