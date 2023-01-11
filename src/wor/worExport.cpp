@@ -35,7 +35,7 @@
 #endif
 
 #include "wor/worExport.h"
-#include "wor/worWr.h"
+#include "worWr.h"
 #include "worFiles.h"
 
 #include <wx/fileconf.h>

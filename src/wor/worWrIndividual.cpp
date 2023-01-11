@@ -36,7 +36,7 @@
 
 #include "wor/worExport.h"
 
-#include "wor/worWr.h"
+#include "worWr.h"
 
 #include <rec/recDb.h>
 
